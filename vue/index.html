@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Titre de la page</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="./node_modules/vue/dist/vue.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <h1>JobBoard</h1>
+    <p>Bienvenue sur notre site d'offre d'emploi. Parcourez nos offres en ligne (CDI, CDD, Stage, Alternance) et postulez gratuitement.</p>
+    <select name="contrat" id="job-contrat">
+      <option value="">Type de contrat:</option>
+      <option value="cdi">CDI</option>
+      <option value="cdd">CDD</option>
+      <option value="stage">Stage</option>
+      <option value="alternance">Alternance</option>
+    </select>
+    <label for="motclés">Mots-clés: </label><input type="search" required><label for="lieux">Lieux: </label><input type="search" required><button>Rechercher</button>
+    <dl v-for="item in offres">
+      <p>
+        <dt>{{item.titre}}<br>{{item.entreprise}}</dt>
+        <dt>{{item.type}} - {{item.lieu}}</dt>
+        <dd id="desc"></dd>
+        <button v-on:click="information">Learn more</button>
+        <button v-on:click="document.location.href='signup.html'">Apply</button>
+      </p>
+    </dl>
+    <script type="text/javascript">
+      new Vue({
+        el: '#app',
+        data: {
+          offres: [{
+              titre: 'Chef de Projet IT',
+              entreprise: 'PROSERVIA',
+              type: 'CDI',
+              lieu: 'Bordeaux(33)',
+              description: 'ESN spécialiste des solutions IT et Télécom certifiée Top Employer 2020. Proservia a rejoint ManpowerGroup en 2011 pour porter ses activités d\'outsourcing IT et accompagner les entreprises dans leurs projets de transformation numérique, en France et depuis fin 2015, en Europe. A travers notre ADN alliant proximité, expertise et savoir-être, nous raisonnons avec ce qui constitue le cœur des organisations : les ressources humaines.'
+            },
+            {
+              titre: 'Mecanicien',
+              entreprise: 'Ad Automobile',
+              type: 'CDI',
+              lieu: 'Antibes(06)',
+              description: 'Nous recherchons pour notre casse automobile, un mécanicien automobile qualifié avec une expérience exigée de 2 ans dans le domaine. Le poste a pour mission de dépolluer les véhicules hors d\'usage et démonter les pièces avec minutie. Horaires 8h00 12h00 14h00 18h00 du lundi au vendredi. La personne doit être autonome, sérieuse et dotée d\'un esprit d\'équipe.'
+            },
+            {
+              titre: 'Infirmière préleveuse',
+              entreprise: 'Laboratoire Airbio',
+              type: 'CDD',
+              lieu: 'Colombiers(31)',
+              description: 'Laboratoire de biologie médicale de plus de 45 collaborateurs, multi sites localisés en Haute Garonne, recherche : UN(E) INFIRMIER(E) PRÉLEVEUR(SE) (H/F) disponible immédiatement pour exercer sur nos laboratoires de l\'ouest Toulousain . Vous effectuerez les prélèvements au sein de nos laboratoires de Colomiers. Vous travaillerez 4,5 jours par semaine du lundi au samedi démarrage à 7h . Vous êtes reconnu(e) pour votre aisance et votre rapidité en prélèvement. Vous êtes rigoureux(se) et êtes doté(e) de l\'esprit d\'équipe. Vous aurez aussi à accueillir les dossiers informatiques de nos patients . La formation et une période de tutorat sont assurées lors de votre entrée en fonction. Poste à pourvoir en CDD à temps complet ou partiel.'
+            },
+            {
+              titre: 'Vendeur',
+              entreprise: 'LE TEMPS DES CERISES',
+              type: 'CDD',
+              lieu: 'Strasbourg(67)',
+              description: 'Maison de savoir-faire de DENIM et de prêt à porter moyen/haut de gamme dédiée à la femme, l’homme et l’enfant. En plein développement, Le Temps des Cerises est devenue aujourd’hui une marque de mode incontournable chez les 15-40 ans.'
+            },
+            {
+              titre: 'Commercial',
+              entreprise: 'PIGIER',
+              type: 'Alternance',
+              lieu: 'Nancy(54)',
+              description: 'Pigier Performance Nancy, école de commerce en alternance, recherche pour une de ses entreprises partenaires un Commercial BtoB h/f en contrat d\'alternance sur Nancy au sein d\'une entreprise spécialisée dans le second oeuvre et l\'isolation.'
+            },
+            {
+              titre: 'Webmarketing Communication',
+              entreprise: 'Tagadamedia',
+              type: 'Stage',
+              lieu: 'Paris(75)',
+              description: 'Créée par des entrepreneurs reconnus depuis plus de quinze ans dans le digital, Tagadamedia développe ses activités d’éditions à travers différentes thématiques : cuisine, astuces, bien-être, jeu... Avec déjà plus 2,5 millions de visiteurs uniques chaque mois, nous créons sans cesse du contenu pour nos communautés, notamment autour des sites suivants : www.supertoinette.com,www.mesrecettesfaciles.fr,www.clicbienetre.com, www.primolotto.com,www.testonsensemble.com, www.minutefacile.fr, Afin de continuer à développer ses activités Tagadamedia recherche actuellement : *un(e) stagiaire webmarketing communication'
+            },
+          ]
+        },
+        methods: {
+          information() {
+            console.log(this.offres);
+            for (item in this.offres) {
+              for (it in this.offres[item]) {
+                console.log(this.offres[item][0]);
+              }
+              //console.log(this.offres[item]);
+            }
+
+            document.getElementById('desc').innerHTML = 'description'
+          }
+
+        }
+      });
+    </script>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+.loading::after {
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    content: "";
+    border-radius:50%;
+    border:8px solid;
+    border-color:#000 #0000;
+    animation:s1 1s infinite;
+}
+
+.loading {
+    opacity: 0.5 !important;
+}
+
+.page-enter {
+    opacity: 0;
+  }
+  
+  .page-enter-active {
+    opacity: 1;
+    transition: opacity 300ms
+  }
+  
+  .page-exit {
+    opacity: 1;
+  }
+  
+  .page-exit-active {
+    opacity: 0;
+    transition: opacity 300ms
+  }
+
+@keyframes s1 {to{transform: rotate(.5turn)}}

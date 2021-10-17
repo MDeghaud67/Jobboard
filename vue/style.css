@@ -1,0 +1,8 @@
+ul li{
+    list-style: none;
+    display: inline;
+}
+
+dl p{
+    border: solid 1px;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Inscrire un titre ici</title>
+    <script type="text/javascript" src="/node_modules/vue/dist/vue.min.js"></script>
+</head>
+
+<body>
+    <h1>JobBoard</h1>
+    <form id="app">
+        <label for="">Nom: </label><input type="text" required><br>
+        <label for="">Prénom: </label><input type="text" required><br>
+        <label for="">Téléphone: </label><input type="tel" required><br>
+        <label for="">Email: </label><input type="email" required><br>
+        <label for="">Message: </label><br><textarea name="" id="" cols="30" rows="10" required></textarea><br>
+        <label for="">CV: </label><input type="file" required><br>
+        <button>Envoyer</button>
+    </form>
+    <script>
+        /*var MongoClient = require('mongodb').MongoClient;
+        var url = "mongodb://localhost:27017/";
+
+        MongoClient.connect (url, {useNewUrlParser: true}, (err, client) => {
+            if (err) throw err;
+            var dbo = db.db("mydb");
+            var myobj = {
+                name: "Company Inc",
+                address: "Highway 37"
+            };
+            dbo.collection("customers").insertOne(myobj, function(err, res) {
+                if (err) throw err;
+                console.log("1 document inserted");
+                db.close();
+            });
+        });
+    </script>
+</body></html>

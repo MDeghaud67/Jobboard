@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Titre de la page</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="/node_modules/vue/dist/vue.min.js"></script>
+</head>
+
+<body>
+    <h1>JobBoard</h1>
+    <form id="log">
+        <label for="">email: </label><input type="email" v-model="email" required><br>
+        <label for="">mot de passe: </label><input type="password" v-model="password" required><br>
+        <button v-on:click="login">Connexion</button>
+    </form>
+    <script>
+        /*var MongoClient = require('mongodb').MongoClient;
+        var url = "mongodb://localhost:27017/";
+
+        MongoClient.connect(url, function(err, db) {
+            if (err) throw err;
+            var dbo = db.db("jobboard");
+            dbo.collection("customers").find({}).toArray(function(err, result) {
+                if (err) throw err;
+                console.log(result);
+                db.close();
+            });
+        });*/
+        new Vue({
+            el: '#log',
+            data: {
+                email: null,
+                password: null
+            },
+            methods: {
+                login() {
+                    if (this.email !== null && this.password !== null) {
+                        if (this.email == username && this.password == password) {
+                            document.location.href = "form.html";
+                        } else {
+                            alert("email ou mot de passe incorrect");
+                        }
+                    } else {
+                        alert("Veuillez saisir tous les champs");
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Titre de la page</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="/node_modules/vue/dist/vue.min.js"></script>
+</head>
+
+<body>
+    <h1>JobBoard</h1>
+    <form id="form" action="login.html">
+        <label for="lastName">Nom: </label><input type="text" v-model="lastName" required><br>
+        <label for="firstName">Prénom: </label><input type="text" v-model="firstName" required><br>
+        <label for="">Téléphone: </label><input type="tel" v-model="telephone" required><br>
+        <label for="email">Email: </label><input type="email" v-model="email" required><br>
+        <label for="password">Mot de passe: </label><input type="password" v-model="password" required><br>
+        <button>Inscription</button>
+    </form>
+    <script>
+        /*var MongoClient = require('mongodb').MongoClient;
+          var url = "mongodb://localhost:27017/";
+          MongoClient.connect(url, function(error, db) {
+            if (error) throw error;
+
+            console.log("Database created!");
+            
+            var dbo = db.db("jobboard");
+
+            var objNew = {
+                lastName: this.lastName,
+                firstName: this.firstName,
+                email: this.email,
+                password: this.password
+            };
+
+            dbo.collection("client").insert(objNew, function(error, results) {
+                if (error) throw error;
+
+                console.log("Le document a bien été inséré");
+            });
+        });*/
+        new Vue({
+            el: '#form',
+            data: {
+                lastName: '',
+                firstName: '',
+                telephone: '',
+                email: '',
+                password: ''
+            },
+            methods: {
+                register() {
+                    if (this.lastName !== '' && this.firstName !== '' && this.telephone !== '' && this.email !== '' && this.password !== '') {
+                        //document.location.href = 'login.html';
+                    }
+                }
+            }
+        });
+    </script>
+</body></html>
+
+   
